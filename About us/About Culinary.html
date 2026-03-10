@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us</title>
+
+<!-- Font Awesome Icon -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:absolute;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+z-index:10;
+}
+
+.nav-menu{
+display:flex;
+gap:30px;
+padding:12px 35px;
+border-radius:30px;
+background:rgba(255,255,255,0.25);
+backdrop-filter:blur(10px);
+align-items:center;
+}
+
+.nav-menu a{
+text-decoration:none;
+color:white;
+font-size:15px;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.nav-menu a i{
+font-size:14px;
+}
+
+.active{
+background:#c52828;
+padding:8px 18px;
+border-radius:20px;
+}
+
+/* HEADER */
+
+.hero{
+height:600px;
+background:
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+url("about.png");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding-left:100px;
+color:white;
+}
+
+.hero h1{
+font-size:70px;
+font-family:serif;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:20px;
+line-height:1.6;
+max-width:450px;
+}
+
+/* CONTENT */
+
+.content{
+padding:80px;
+background:white;
+min-height:400px;
+}
+.icon{
+background:#c62828;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+margin-bottom:15px;
+}
+
+.icon i{
+color:white;
+font-size:26px;
+}
+.agency-section{
+padding:100px 80px;
+background:#f6f6f6;
+}
+
+/* INTRO TEXT */
+
+.intro-text{
+display:flex;
+justify-content:space-between;
+margin-bottom:60px;
+}
+
+.title h2{
+font-size:45px;
+font-weight:700;
+}
+
+.title span{
+color:#c62828;
+}
+
+.desc{
+max-width:350px;
+color:#b33;
+font-size:14px;
+line-height:1.7;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.desc2 {
+width:50px;     
+background:#c62828;
+margin:20px 0;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* CARD */
+
+.card-container{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-bottom:80px;
+}
+
+.card{
+background:#777;
+color:white;
+width:260px;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card h3{
+margin:15px 0;
+}
+
+.card p{
+font-size:13px;
+line-height:1.6;
+}
+
+.active-card{
+background:#333;
+transform:translateY(-20px);
+}
+
+/* TEAM IMAGE */
+
+.team-images{
+position:relative;
+width:100%;
+max-width:900px;
+margin:auto;
+}
+
+.team-main img{
+width:100%;
+border-radius:20px;
+}
+
+.team-main h2{
+position:absolute;
+bottom:20px;
+left:30px;
+color:white;
+font-size:45px;
+}
+
+.team-small{
+position:absolute;
+right:-50px;
+bottom:-30px;
+}
+
+.team-small img{
+width:350px;
+border-radius:20px;
+}
+
+.team-small h3{
+position:absolute;
+top:40%;
+left:20px;
+color:white;
+font-size:30px;
+}
+
+.team-images{
+position:relative;
+width:100%;
+max-width:900px;
+margin:auto;
+}
+
+.team-main img{
+width:100%;
+border-radius:20px;
+}
+
+.team-main h2{
+position:absolute;
+bottom:20px;
+left:30px;
+color:white;
+font-size:45px;
+}
+
+.team-small{
+position:absolute;
+right:-50px;
+bottom:-30px;
+}
+
+.team-small img{
+width:350px;
+border-radius:20px;
+}
+
+.team-small h3{
+position:absolute;
+top:40%;
+left:20px;
+color:white;
+font-size:30px;
+}
+
+.team-section{
+padding:100px 80px;
+background: rgba(182, 182, 182, 0.8);
+text-align:center;
+}
+
+/* TITLE */
+
+.team-header{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+margin-bottom:10px;
+}
+
+.team-header h2{
+font-size:40px;
+font-weight:700;
+margin-left: 300px;
+}
+
+.team-header span{
+color:#c62828;
+}
+
+.team-desc{
+color:#444;
+margin-bottom:60px;
+font-family: bold italic 16px/1.5 "Times New Roman", serif;
+}
+
+/* DROPDOWN */
+
+.major-dropdown{
+position:relative;
+}
+
+.major-dropdown button{
+background:none;
+border:none;
+font-size:16px;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:5px;
+margin-left: 190px;
+}
+
+#majorMenu{
+display:none;
+position:absolute;
+top:30px;
+right:0;
+background:white;
+list-style:none;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+padding:10px 0;
+width:150px;
+z-index: 1;
+}
+
+#majorMenu li{
+padding:10px 15px;
+cursor:pointer;
+}
+
+#majorMenu li:hover{
+background:#eee;
+border-color: #2a2a2a   ;
+}
+
+.team-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+justify-items:center;
+}
+
+/* CARD */
+
+.team-card{
+position:relative;
+width:220px;
+height:260px;
+background:black;
+border-radius:25px;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.team-card img{
+width:90%;
+object-fit:contain;
+}
+
+/* NAME TAG */
+
+.name-tag{
+position:absolute;
+bottom: 10px;
+background:#c62828;
+color:white;
+width:100%;
+padding:12px;
+border-radius:20px;
+transform:translateY(30%);
+}
+
+.name-tag h4{
+font-size:14px;
+}
+
+.name-tag p{
+font-size:12px;
+opacity:0.9;
+}
+
+.footer{
+    background:#2a2a2a;
+    color:white;
+    padding:60px 80px;
+    }
+
+    .footer-container{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    }
+
+    /* LOGO */
+    .footer-logo{
+    width:90px;
+    margin-bottom:10px;
+    }
+
+    /* LEFT */
+    .footer-left{
+    max-width:350px;
+    font-size:14px;
+    line-height:1.6;
+    }
+
+    /* MIDDLE */
+    .footer-middle{
+    display:flex;
+    gap:80px;
+    border-left:1px solid #777;
+    border-right:1px solid #777;
+    padding:0 60px;
+    }
+
+    .footer-middle h4{
+    margin-bottom:10px;
+    }
+
+    .footer-middle p{
+    margin:5px 0;
+    cursor:pointer;
+    }
+
+    /* BUTTON */
+    .footer-middle button{
+    margin-top:10px;
+    padding:6px 14px;
+    border:1px solid white;
+    background:transparent;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    }
+
+    /* RIGHT */
+    .footer-right{
+    max-width:300px;
+    font-size:14px;
+    line-height:1.6;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="nav-menu">
+
+<a href="#"><i class="fa-solid fa-house"></i> Home</a>
+
+<a href="#"><i class="fa-solid fa-plane"></i> Tourist</a>
+
+<a href="#"><i class="fa-solid fa-user"></i> Biography</a>
+
+<a href="#"><i class="fa-solid fa-tree"></i> Nature</a>
+
+<a href="#"><i class="fa-solid fa-star"></i> Culture</a>
+
+<a href="#" class="active">
+<i class="fa-solid fa-user"></i> About Us
+</a>
+
+</div>
+
+</div>
+
+<!-- HEADER -->
+
+<section class="hero">
+
+<div>
+
+<h1>About Us</h1>
+
+<p>
+Discover the Story Behind<br>Our Passion for Egypt
+</p>
+
+</div>
+
+</section>
+
+<!-- SECTION BAWAH -->
+<section class="agency-section">
+
+<div class="intro-text">
+
+<div class="title">
+<h2><span>Introduction</span> To Best <br> Digital Agency!</h2>
+</div>
+
+<div class="desc">
+<p>
+Discover team members with incredible collaboration that
+you’ve never seen before.
+</p>
+<div class="desc2"></div>
+<p>
+extraordinary projects that can be realized by extraordinary teamwork
+</p>
+</div>
+
+</div>
+
+
+<div class="card-container">
+
+<div class="card">
+<div class="icon">
+<i class="fa-regular fa-lightbulb"></i>
+</div>
+<h3>Vision</h3>
+<p>
+Located at the crossroads of Africa and the Middle East,
+Egypt has a strategically important position in history
+and world trade.
+</p>
+</div>
+
+
+<div class="card active-card">
+<div class="icon">
+<i class="fa-solid fa-cube"></i>
+</div>
+<h3>Core Commitment</h3>
+<p>
+From the Nile River to the vast desert and the Red Sea,
+Egypt offers a landscape of contrasts and awe.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">
+<i class="fa-solid fa-brain"></i>
+</div>
+<h3>Mission</h3>
+<p>
+The beautiful beaches of Sharm El-Sheikh and the sunsets
+of Luxor create unforgettable experiences.
+</p>
+</div>
+</div>
+
+<div class="team-images">
+
+<div class="team-main">
+<img src="team.jpg">
+<h2>TeamWork</h2>
+</div>
+
+<div class="team-small">
+<img src="disc.jpg">
+<h3>Discussion</h3>
+</div>
+
+</div>
+
+</section>
+<section class="team-section">
+
+<div class="team-header">
+
+<h2><span>Team</span> Members</h2>
+
+<div class="major-dropdown">
+<button onclick="toggleMajor()">
+Major <i class="fa-solid fa-chevron-down"></i>
+</button>
+
+<ul id="majorMenu">
+<li> <a href="About PPLG.html">PPLG</a></li>
+<li> <a href="About Culinary.html">Culinary</a></li>
+<li> <a href="About DKV.html">DKV</a></li>
+<li> <a href="About Accounting.html">Accounting</a></li>
+<li> <a href="About Hospitality.html">Hospitality</a></li>
+</ul>
+</div>
+
+</div>
+
+<p class="team-desc">
+To become a trusted digital platform that promotes Egypt’s heritage, culture, and global presence.
+</p>
+
+
+<div class="team-grid">
+
+<div class="team-card">
+<img src="prof17.jpg">
+<div class="name-tag">
+<h4> Inee Lidya Effendi</h4>
+</div>
+</div>
+
+<div class="team-card">
+<img src="prof5.png">
+<div class="name-tag">
+<h4>Michael Habel Ohoirat</h4>
+</div>
+</div>
+
+<div class="team-card">
+<img src="prof16.jpg">
+<div class="name-tag">
+<h4>Besty bani putri</h4>
+</div>
+</div>
+
+<div class="team-card">
+<img src="prof17.jpg">
+<div class="name-tag">
+<h4> clivens lie</h4>
+</div>
+</div>
+
+<div class="team-card">
+<img src="prof8.png">
+<div class="name-tag">
+<h4>⁠rizky rabah</h4>
+</div>
+</div>
+
+<div class="team-card">
+<img src="prof 12.jpg">
+<div class="name-tag">
+<h4>laluna tunggadewi vermeulen</h4>
+</div>
+</div>
+
+<div class="team-card">
+<img src="prof15.jpg">
+<div class="name-tag">
+<h4>Eunike Rarasati</h4>
+</div>
+</div>
+
+<div class="team-card">
+<img src="prof11.jpg">
+<div class="name-tag">
+<h4> queenydecandro</h4>
+</div>
+</div>
+
+</section>
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- LEFT -->
+<div class="footer-left">
+
+<img src="school.png" class="footer-logo">
+
+<h3>Metland School</h3>
+
+<p>
+Unveil the timeless allure of Egypt with Nileux. From the golden desert dunes
+to the historic and life-giving flow of the Nile, we carefully curate your
+journey into a seamless exploration of ancient heritage, vibrant culture,
+and modern wonders.
+</p>
+
+<p class="copyright">
+©2026 Nileux. Crafted with passion for the wonders of Egypt.
+</p>
+
+</div>
+
+
+<!-- MIDDLE -->
+<div class="footer-middle">
+
+<div class="team">
+<h4>TEAM</h4>
+<p>PPLG</p>
+<p>DKV</p>
+<p>Accounting</p>
+<p>Culinary</p>
+<p>Hospitality</p>
+
+<button>About Team</button>
+</div>
+
+<div class="navigation">
+<h4>NAVIGATION</h4>
+<p>Home</p>
+<p>Tourist</p>
+<p>Biography</p>
+<p>Culture</p>
+<p>About us</p>
+</div>
+
+</div>
+
+
+<!-- RIGHT -->
+<div class="footer-right">
+
+<img src="egypt.png" class="footer-logo">
+
+<p>
+This website was created to fulfill an academic assignment while also serving
+as a promotional initiative to highlight the cultural heritage, historical
+significance, and tourism attractions of Egypt.
+</p>
+
+</div>
+
+</div>
+
+</footer>
+<script>
+function toggleMajor(){
+const menu = document.getElementById("majorMenu");
+
+if(menu.style.display === "block"){
+menu.style.display = "none";
+}else{
+menu.style.display = "block";
+}
+
+}
+</script>
+</body>
+</html>
