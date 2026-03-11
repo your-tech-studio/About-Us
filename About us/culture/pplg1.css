@@ -1,0 +1,451 @@
+.culinary-detail {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 1974px;
+    margin-top: 70px;
+    overflow: visible;
+    background: url('back.png') lightgray 50% / cover no-repeat;
+}
+
+.culinary-detail-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.30);
+    z-index: 0;
+}
+
+.culinary-card-wrap {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1350px;
+    height: 673px;
+    z-index: 2;
+}
+
+.culinary-card-red {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 845px;
+    height: 673px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.culinary-card-red svg.red-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.culinary-card-blur-box {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 790px;
+    height: 515px;
+    border-radius: 15px;
+    opacity: 0.75;
+    background: rgba(217, 217, 217, 0.25);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(25px);
+    z-index: 0;
+}
+
+.culinary-card-red-content {
+    position: relative;
+    z-index: 1;
+    padding: 48px 52px 100px 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: 100%;
+}
+
+.culinary-card-name {
+    color: #F6FF00;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+.culinary-card-desc {
+    color: #FFF;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.culinary-card-label {
+    color: #F6FF00;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+.culinary-card-list {
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.7;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.culinary-card-footer {
+    color: #FFF;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.culinary-card-nav {
+    position: absolute;
+    bottom: 28px;
+    left: 0;
+    width: 845px;
+    display: flex;
+    margin-left: 600px;
+    gap: 24px;
+    z-index: 3;
+}
+
+.culinary-card-nav button {
+    width: 90px;
+    height: 90px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.culinary-card-nav button:hover {
+    opacity: 0.75;
+}
+
+.culinary-card-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 756px;
+    height: 673px;
+    border-radius: 0 32px 32px 32px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.culinary-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.culinary-info-wrap {
+    position: absolute;
+    top: 900px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1350px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    z-index: 2;
+}
+
+.culinary-info-box {
+    width: 620px;
+    height: 812px;
+    flex-shrink: 0;
+    border-radius: 32px;
+    background: #AC2A2A;
+    box-shadow: 8px 8px 4px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.culinary-info-img {
+    width: 620px;
+    height: 300px;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    border-radius: 32px 32px 0 0;
+}
+
+.culinary-info-box-title {
+    color: #FFF;
+    text-align: justify;
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: normal;
+    margin: 0;
+    padding: 24px 32px 16px;
+}
+
+.culinary-info-box-body {
+    padding: 0 32px 32px;
+    flex: 1;
+}
+
+.culinary-info-box-body ul,
+.culinary-info-box-body ol {
+    color: #FFF;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 28px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.event-section {
+    width: 100%;
+    background: #fff;
+    padding: 80px 0 100px;
+}
+
+.event-section-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+.event-title {
+    margin: 0;
+    text-align: center;
+}
+
+.event-title-accent {
+    color: #AC2A2A;
+    font-family: 'Inter', sans-serif;
+    font-size: 84px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.event-title-plain {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 84px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.event-img {
+    width: 1076px;
+    height: 1913px;
+    aspect-ratio: 9 / 16;
+    border-radius: 32px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+.event-desc {
+    color: #000;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: normal;
+    max-width: 1076px;
+    margin: 0;
+}
+
+.destination-section {
+    width: 100%;
+    background: #AC2A2A;
+    padding: 60px 0 80px;
+    overflow: hidden;
+}
+
+.dest-cards-row {
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+    width: 1400px;
+    max-width: 95%;
+    margin: 0 auto;
+    height: 780px;
+}
+
+.dest-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 180px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dest-card:hover {
+    width: 760px;
+}
+
+.dest-card-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.4s ease;
+}
+
+.dest-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.05) 0%,
+        rgba(0,0,0,0.55) 100%
+    );
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+.dest-card-default {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    transition: opacity 0.3s ease;
+}
+
+.dest-card-line {
+    width: 2px;
+    flex: 1;
+    background: #fff;
+    margin: 12px 0;
+    max-height: 200px;
+}
+
+.dest-card-vname {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.dest-card-vnum {
+    color: rgba(255,255,255,0.85);
+    font-family: 'Inter', sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.dest-card:hover .dest-card-default {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.dest-card-hover {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease 0.25s;
+}
+
+.dest-card:hover .dest-card-hover {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dest-card-hover-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    position: absolute;
+    top: 32px;
+    right: 36px;
+}
+
+.dest-card-hnum {
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+.dest-card-hline {
+    width: 100px;
+    height: 3px;
+    background: #fff;
+    align-self: flex-start;
+}
+
+.dest-card-htitle {
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.dest-card-hdesc {
+    color: rgba(255,255,255,0.92);
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+    max-width: 600px;
+}

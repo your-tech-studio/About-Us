@@ -1,0 +1,486 @@
+/* ============================================================
+   biography.css — PPLG Biography Page
+   ============================================================ */
+
+/* ── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ── CSS Variables ──────────────────────────────────────────── */
+:root {
+    --red:   #AC2A2A;
+    --gold:  #FF9D00;
+    --cream: #EFE0C6;
+    --dark:  #2a1a0a;
+    --TAB_W: 110px;
+    --BALL:  70px;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+body {
+    font-family: 'Lato', sans-serif;
+    background: var(--cream);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════════════════════════════ */
+.navbar-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 0px 0 0;
+    position: relative;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    width: 1400px;
+    max-width: 70%;
+    padding: 10px 24px;
+    margin: 0;
+    border-radius: 64px;
+    background: rgba(180, 160, 160, 0.30);
+    backdrop-filter: blur(7px);
+    position: relative;
+    z-index: 10;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 24px;
+    padding: 8px 22px;
+    border-radius: 30px;
+    transition: 0.25s;
+}
+
+
+nav a:hover { background: rgba(255, 255, 255, 0.12); }
+
+nav a.active {
+    background: #AC2A2A;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════════════ */
+.hero {
+    background: #C4A077 url("library.jpg") center / cover no-repeat;
+    position: relative;
+    padding-top: 16px;
+    padding-bottom: 100px;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* warm tint overlay — sits above bg image, below SVG panels */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(180, 140, 90, .40);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── SVG diagonal background panels ────────────────────────── */
+/*
+   Two SVG panels positioned absolute inside .hero.
+   Left  = warm brown diagonal
+   Right = light grey-blue diagonal
+   Each tab swaps the SVG innerHTML via JS.
+*/
+.hero-svg-left,
+.hero-svg-right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-svg-left  { left: 0;  width: 55%; }
+.hero-svg-right { right: 0; width: 57%; }
+
+.hero-svg-left  svg,
+.hero-svg-right svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ── Hero card (grey rounded box) ───────────────────────────── */
+.hero-card {
+    position: relative;
+    z-index: 5;
+    background: #D9D9D9;
+    border-radius: 32px;
+    width: 800px;
+    height: 594px;
+    max-width: 92%;
+    margin: 28px auto 0;
+    padding: 40px 48px 0 48px;
+    box-shadow: 8px 8px 4px 0 rgba(0, 0, 0, 0.25);
+    overflow: visible;
+}
+
+/* ── Person display ─────────────────────────────────────────── */
+.person-wrap {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 52px;
+    height: 395px;
+}
+
+.person-photo {
+    flex-shrink: 0;
+    width: 234px;
+    height: 395px;
+    border-radius: 32px;
+    overflow: hidden;
+    background: lightgray 50% / cover no-repeat;
+    transition: opacity .25s ease;
+}
+
+.person-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.person-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.person-name {
+    color: #000;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: normal;
+    transition: opacity .25s ease, transform .3s ease;
+}
+
+.person-sub {
+    color: #000;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: normal;
+    transition: opacity .25s ease;
+}
+
+/* fade animation helpers */
+.fading {
+    opacity: 0 !important;
+    transform: translateX(20px) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TABBAR
+══════════════════════════════════════════════════════════════ */
+.tabbar-outer {
+    position: relative;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    margin-top: 44px;
+    overflow: visible;
+}
+
+/* the red pill track */
+.tabbar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background: var(--red);
+    border-radius: 25px;
+    width: 535px;
+    height: 90px;
+    padding: 0 10px;
+    overflow: visible;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    margin-top: 10px;
+}
+
+/* ── Background circle behind ball (notch effect) ───────────── */
+/* Matches hero-card bg (#D9D9D9) so it blends seamlessly        */
+.ball-wrap {
+    position: absolute;
+    width: 117px;
+    height: 90px;
+    border-radius: 0;        /* hapus border-radius */
+    background: transparent; /* hapus background */
+    top: -45px;
+    transition: left .42s cubic-bezier(.68, -.25, .27, 1.35);
+    pointer-events: none;
+    z-index: 9;
+}
+
+/* ── The sliding orange ball ────────────────────────────────── */
+.ball {
+    position: absolute;
+    width: var(--BALL);
+    height: var(--BALL);
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 6px 18px rgba(255, 157, 0, .45), 0 3px 8px rgba(0, 0, 0, .25);
+    top: -35px;
+    transition: left .42s cubic-bezier(.68, -.25, .27, 1.35);
+    pointer-events: none;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ball svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+/* ── Each tab button ────────────────────────────────────────── */
+.tab {
+    position: relative;
+    z-index: 4;
+    width: var(--TAB_W);
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    border-radius: 999px;
+    flex: 1;
+}
+
+.tab .t-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    transition: opacity .25s ease;
+}
+
+/* Hide icon on active tab — ball covers it */
+.tab.active .t-icon { opacity: 0; }
+
+.tab .t-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .82);
+    letter-spacing: .03em;
+    transition: color .25s ease;
+}
+
+/* Active label turns gold */
+.tab.active .t-label { color: var(--gold); }
+
+/* ══════════════════════════════════════════════════════════════
+   BIO SECTION
+══════════════════════════════════════════════════════════════ */
+.bio-section {
+    background: var(--cream);
+    padding: 60px 0 80px;
+}
+
+.bio-inner {
+    width: 95%;
+    max-width: 1239px;  /* samain sama bio-card */
+    margin: 0 auto;
+}
+
+h2.bio-title {
+    color: #000;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 38px;
+}
+
+.bio-card {
+    display: block;  /* ganti dari flex ke block */
+    width: 1239px;
+    max-width: 100%;
+    padding: 70px 70px 106px 70px;
+    border-radius: 32px;
+    background: #D9D9D9;
+    box-shadow: 8px 8px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* ── Panels ─────────────────────────────────────────────────── */
+.panel { display: none; }
+
+.panel.active {
+    display: block;
+    animation: panelIn .38s cubic-bezier(.4, 0, .2, 1) both;
+}
+
+.panel.active.from-left {
+    animation: panelInLeft .38s cubic-bezier(.4, 0, .2, 1) both;
+}
+
+@keyframes panelIn {
+    from { opacity: 0; transform: translateX(36px); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes panelInLeft {
+    from { opacity: 0; transform: translateX(-36px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* ── Bio entries ────────────────────────────────────────────── */
+.entry { margin-bottom: 22px; }
+.entry:last-child { margin-bottom: 0; }
+
+.entry-title {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: none; /* hapus uppercase kalau mau */
+    letter-spacing: 0;
+}
+
+.entry-text {
+    color: #000;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════════════ */
+.footer{
+background:linear-gradient(#4a4a4a,#2f2f2f);
+color:white;
+padding:70px 80px;
+font-family:Arial;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:40px;
+}
+
+/* LOGO */
+.logo{
+width:90px;
+margin-bottom:10px;
+}
+
+/* LEFT */
+
+.footer-left{
+max-width:350px;
+font-size:14px;
+line-height:1.6;
+}
+
+/* CENTER */
+
+.footer-center{
+display:flex;
+gap:80px;
+padding:0 60px;
+border-left:2px solid rgba(255,255,255,0.3);
+border-right:2px solid rgba(255,255,255,0.3);
+font-size: 23px;
+}
+
+.footer-center h4{
+margin-bottom:10px;
+}
+
+.footer-center p{
+margin:6px 0;
+}
+
+/* BUTTON */
+
+.footer-center button{
+margin-top:12px;
+padding:7px 18px;
+background:transparent;
+border:1px solid white;
+border-radius:6px;
+color:white;
+cursor:pointer;
+font-size: 23px;
+}
+
+.footer-center button:hover{
+background:white;
+color:black;
+}
+
+/* RIGHT */
+
+.footer-right{
+max-width:300px;
+font-size:14px;
+line-height:1.6;
+}
+
+.footer::after{
+content:"";
+display:block;
+width:60%;
+height:40px;
+margin:40px auto 0;
+background:radial-gradient(rgba(255,255,255,0.2),transparent);
+filter:blur(10px);
+}
+
+/* COPYRIGHT */
+
+.copyright{
+margin-top:15px;
+font-size:12px;
+opacity:0.7;
+}
+
+.bio-section { transition: background .4s ease; }
+.bio-section.bg-0 { background: #EFE0C6; }
+.bio-section.bg-1 { background: #A97142; }
+.bio-section.bg-2 { background: #AC2A2A; }
+.bio-section.bg-3 { background: #E1E8ED; }
+.bio-section.bg-4 { background: #E1E8ED; }
